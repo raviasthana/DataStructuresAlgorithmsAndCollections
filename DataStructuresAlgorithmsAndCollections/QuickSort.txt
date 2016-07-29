@@ -139,3 +139,12 @@ Which method should I use ?
 -If you are somewhat worried about malicious users giving you bad arrays to sort (used as a Denial of Service attack) then use random pivots.
 -If you are really worried about malicious users or you need to guarantee that the quicksort runs is O(n log n) then use the median of medians. At this point you may want to seriously consider using a different sorting method like merge sort.
 
+Complexity Analysis for Quick Sort
+==================================
+Worst Case Time Complexity:	O(n^2)
+Best Case Time Complexity:	O(n log n)
+Average Time Complexity:	O(n log n)
+Space Complexity:			O(n log n)
+
+Quick Sort is not a stable sorting technique, so it might change the position of two same values in the 
+list while sorting.	
