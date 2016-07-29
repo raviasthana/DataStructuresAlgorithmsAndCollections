@@ -1,0 +1,119 @@
+Data Structures
+===============
+Data structure is a way of collecting and organising data in such a way that we can perform
+operations on the data in an effective way.
+
+Basic types of Data Structures
+==============================
+Anything that can data can be called a data-structure, hence integer, float, boolean, char etc 
+are all data structures. They are known as "Primitive Data Structures".
+
+Then there are some "Complex Data Structures" which are used to store large and connected data.
+Examples of "Complex/Abstract Data Structures" are:
+Linked List/Tree/Graph/Stack/Queue etc.
+
+All these data structures allow us to perform different operations on data. We select these data
+structures based on which type of functionality or operation is required.
+					
+				|------Built-in Data Structures
+Data Structures-|
+				|------User Defined Data Structures
+				
+							----------------------------
+							| Built-in Data Structures |
+							----------------------------
+							|		 |		 |			|
+						integer    float    char	 boolean
+
+
+						  --------------------------------	
+						  | User Defined Data Structures |
+						  --------------------------------
+										|
+					    |---------------|---------------|
+					  Arrays		  Lists			  Files
+										|
+							-------------------------
+							|					    |
+						Linear Lists		 Non-Linear Lists
+						    |						|
+					   --------------		 ----------------
+					   |			|		 |				|
+					Stack		  Queue		Tree		  Graph
+
+
+Algorithm
+==========
+An algorithm is a finite set of instruction, written in order to accomplish a certain predefined task.
+Algorithm is not the complete code or program, but just a core logic which solves a problem. This can
+be expressed either as an informal high level description as "pseudo-code" or using a "flowchart".
+
+An algorithm is said to be efficient and fast if it takes less time to execute and consumes less 
+memory space. The performance of an algorithm is measured on the basis of following properties.
+
+1) Space complexity
+2) Time complexity
+
+Space Complexity
+================
+Its the amount of memory required by the algorithm during the course of its execution. Space complexity 
+must be taken seriously in a multi-user system and situations where limited memory is available.
+
+An algorithm generally requires space for following components.
+
+>>> Instruction Space: Its the space required by the executable version of the program. This space is 
+generally fixed, but varies depending on the number of lines of code in the program.
+
+>>> Data Space: Its the space required to store all the constants and variables values.
+
+>>> Environment Space: Its the space required to store environment information needed to resume the
+suspended function.
+
+Time Complexity
+===============
+Time complexity of an algorithm signifies the total time required by the program to run to completion.
+The time complexity of an algorithms is most commonly expressed using the "Big O notation".
+
+Time complexity is most commonly estimated by counting the number of elementary functions performed by
+the algorithm. An algorithms performance may vary with different types of input data, and hence usually 
+"worst-case time complexity" is used because that is the maximum time taken for any input size/data.
+
+So "Big O" is all about the approximate worst-case performance of doing something.
+
+Calculating time complexity
+---------------------------
+
+Time complexity, when doing something with every item in one dimension is linear, in two dimensions
+is quadratic, and dividing the working area in half is logarithmic.     
+
+Notations for time complexity
+-----------------------------
+1) Big O - denotes "fewer than or the same as" <expression> iterations.
+2) Big Omega - denotes "more than or same as" <expression> iterations.
+3) Big Theta - denotes "the same as" <expression> iterations.
+4) little o - denotes "fewer than" <expression> iterations.
+5) little omega - denotes "more than" <expression> iterations.
+
+Notation of time complexity with example
+----------------------------------------
+O(expression) is the set of functions that grow slower than or at the same rate as expression.
+Omega(expression) is the set of functions that grow faster than or at the same rate as expression.
+Theta(expression) consist of all the functions that lie in both O(expression) and Omega(expression).
+
+Suppose we have calculated that an algorithm takes f(n) operations, where f(n) = 3*n^2 + 2*n + 4 //n^2 means square of n
+
+Since this polynomial grows at the "same rate as" n^2, then we can say that the function f lies 
+in the set Theta(n^2). (It also lies in the sets of O(n^2) and Omega(n^2) for the same reasons)
+
+The simplest explanation is, because Theta denotes the "same as" expression. Hence, as f(n) grows by
+a factor "same as" n^2, the time complexity can be best represented as Theta(n^2)
+
+
+
+
+
+
+
+
+
+					

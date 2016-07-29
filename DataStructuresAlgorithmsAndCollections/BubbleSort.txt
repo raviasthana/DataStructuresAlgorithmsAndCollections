@@ -1,0 +1,41 @@
+Bubble Sort
+===========
+Bubble sort is an algorithm which us used to sort N elements that given in memory e.g. an array with N 
+number of elements. Bubble Sort compares all the elements "one by one" and sort them based on their values.
+
+It is called Bubble sort, because with each iteration, smaller element in the list bubbles up towards the
+first place, just like water bubble rises to the water surface.
+
+Sorting takes place by stepping through all the data items one by one "in-pairs" and comparing adjacent
+data items and swapping each pair that is out of order.
+
+		5	1	6	2	4	3	<take this array>
+		<--->
+			<--->
+				<--->
+					<--->
+						<--->
+		<--->
+			<--->
+				<--->
+					<--->
+		<--->
+			<--->
+				<--->
+		<--->
+			<--->
+		<--->
+						
+						
+Complexity Analysis of Bubble Sort
+==================================
+In Bubble sort, n-1 comparisons will be done in the 1st pass, n-2 in the second pass, n-3 in 3rd pass an so on.
+So the total number of comparisons will be;
+(n-1) + (n-2) + (n-3) + ..... + 3 + 2 + 1
+Sum = n(n-1)/2 i.e. O(n^2)
+
+Hence the complexity(time) of Bubble sort is O(n^2)
+Main advantage of bubble sort is the simplicity of the algorithm. Space complexity of Bubble sort is O(1)
+because only single additional memory space is required for "temp" variable.
+
+Best-case time complexity will be O(n) when the list is already sorted.

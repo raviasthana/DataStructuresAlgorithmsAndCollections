@@ -1,0 +1,27 @@
+Selection Sort
+==============
+Selection sort is conceptually the simplest sorting algorithm. This algorithm finds the smallest element in
+the array/list and exchanges it with the element in the first position, then it finds the second smallest 
+element and exchanges it with element at the second position. It continues this way till entire array is sorted.
+
+How Selection Sort works
+------------------------
+
+	3	6	1	8	4	5
+	<-------> 1st pass (put 1 in 1st position and 3 in place of 1)
+	1	6	3	8	4	5 (after 1st pass)
+		<---> 2nd pass (put 3 in second position and 6 in place of 3)
+	1	3	6	8	4	5 (after 2nd pass)
+			<-------> 3rd pass (put 4 in 3rd position and 6 in place of 4)
+	1	3	4	8	6	5 (after 3rd pass)
+				<-------> 4th pass (put 5 in 4th position and 8 in place of 5)
+	1	3	4	5	6	8 (after 4th pass)
+	1	3	4	5	6	8 (after 5th pass as nothing to sort in this pass)
+	
+Complexity Analysis of Selection Sort
+=====================================
+
+Worst Case Time Complexity: O(n^2)
+Best Case Time Complexity: 	O(n^2)
+Average Time Complexity: 	O(n^2)
+Space Complexity: 			O(1)					

@@ -1,0 +1,141 @@
+Quick Sort
+==========
+The quick sort uses divide and conquer to gain the same advantages as the merge sort, while not using
+additional storage.
+
+A quick sort first selects a value, which is called the "pivot value". Although there are many different ways
+to choose the pivot value, for the purpose of the illustration here, we will use first item in the list. The
+role of the pivot value is to assist with splitting the list. The actual position where the pivot value
+belongs in the final sorted list, commonly called the "split point", will be used to divide the list for
+subsequent recursive calls to the quick sort.
+
+Lets take following list to illustrate "Quick Sort" algorithm.
+
+	54	26	93	17	77	31	44	55	20	//54 is the first pivot value
+	--
+As part of "Quick Sort", we will start the partition process. This process will find the "split point" and
+at the same time move other items to the appropriate side of the list, either less than or greater than
+the pivot value.   
+		
+indexes		0	1	2	3	4	5	6	7	8
+		  |54|	26	93	17	77	31	44	55	20	// leftmark and rightmark will converge on split point
+		  pivot	|							|
+			leftmark-->				<--rightmark
+
+Partitioning begins by locating two position markers -- let's call them leftmark and rightmark -- at the
+beginning and end of the remaining items in the list (index 1 and 8 in the list above). 
+The goal of the partition process is to move items that are on the wrong side with respect to pivot value
+while also converging on the split point.
+
+First we start with leftmark
+  
+indexes		0	1	2	3	4	5	6	7	8	
+		  |54|	26	93	17	77	31	44	55	20 	// 26<93 move to right, 93>54 STOP
+		  			|						|
+				leftmark				rightmark
+
+Now we start with rightmark
+
+indexes		0	1	2	3	4	5	6	7	8	
+		  |54|	26	93	17	77	31	44	55	20 	// 20<54 STOP
+		  			|						|
+				leftmark				rightmark
+
+Now exchange values at current position of leftmark and rightmark
+		
+indexes		0	1	2	3	4	5	6	7	8	
+		  |54|	26	20	17	77	31	44	55	93 	// exchanged 20 and 93
+		  			|						|
+				leftmark				rightmark
+
+Now continue moving leftmark and rightmark until they cross
+
+indexes		0	1	2	3	4	5	6	7	8	
+		  |54|	26	20	17	77	31	44	55	93 	// leftmark 77>54 STOP, rightmark 44<54 STOP 
+		  			 ------>|		|<-------
+					   leftmark   rightmark
+
+indexes		0	1	2	3	4	5	6	7	8	
+		  |54|	26	20	17	44	31	77	55	93 	// exchange 77 and 44 
+		  			 ------>|		|<-------
+					   leftmark   rightmark
+		   
+indexes		0	1	2	3	4	5	6	7	8	
+		  |54|	26	20	17	44	31	77	55	93 	// leftmark 31<54 move to right, 77>54 STOP 
+		  			 			|	|			// rightmark 31<54 STOP
+		  			 	  rightmark	|			// rightmark < leftmark
+					   			  leftmark		// split point found
+					   		---------->			// exchange 54 and 31
+					   		<----------
+					  at this point leftmark and
+					  rightmark have crossed each other		
+					   		
+Now we have first partition of the list and the elements to the left of the pivot are less than pivot value
+and to the right are greater than pivot value.
+
+		31	26	20	17	44	 |54|	77	55	93			
+		<------ <54 ----->			<-- >54 -->
+
+Summary of the partition process
+--------------------------------
+We begin by incrementing "leftmark" until we locate a value that is greater than then pivot value. We then
+decrement "rightmark" until we find a value that is less than the pivot value. At this point we have 
+discovered two items that are out of place with respect to the eventual split point. Now we exchange these
+two items and then repeat the process again.
+
+At the point where "rightmark" becomes less than "leftmark", we STOP. The position of "rightmark" is now
+the split point. The pivot value is now exchanged with the contents of the split point and the pivot value
+is now in place. In addition, all the items on the left of the split point are less than the pivot value
+and all the items on the right of the split point are greater than the pivot value. The list is now divided
+at the split point and the quick sort is invoked recursively on the two halves till complete list is sorted.
+
+		31	26	20	17	44	 |54|	77	55	93			
+		<------ <54 ----->			<-- >54 -->
+
+	31	26	20	17	44					77	55	93
+	QuickSort left half				QuickSort right half
+
+
+Pivot selection techniques
+==========================		
+Pivot selection is an important part of quick sort and there are many techniques, all with pros and cons.
+
+Why does the pivot matter ?
+
+On average quick sort runs in O(n log n) but if it consistently chooses bad pivots its performance degrades to O(n^2)
+This happens if the pivot is consistently chosen so that all (or too many of) the elements in the array are < the pivot or > than the pivot.
+(A classic case is when the first or last element is chosen as a pivot and the data is already sorted, or nearly sorted)
+
+What are some techniques to choose a pivot ?
+
+Choose the left most or rightmost element. 
+Pros: Simple to code, fast to calculate
+Cons: If the data is sorted or nearly sorted, quick sort will degrade to O(n^2)
+
+Choose the middle element:
+Pros: Simple to code, fast to calculate, but slightly slower than the above methods
+Cons: Still can degrade to O(n^2). Easy for someone to construct an array that will cause it to degrade to O(n^2)
+
+Choose the median of three:
+Pros: Fairly simple to code, reasonably fast to calculate, but slightly slower than the above methods
+Cons: Still can degrade to O(n^2). Fairly easy for someone to construct an array that will cause it to degrade to O(n^2)
+
+Choose the pivot randomly (using built in random function):
+Pros: Simple to code. Harder for someone to construct an array that will cause it to degrade to O(n^2)
+Cons: Selecting a random pivot is fairly slow. Still can degrade to O(n^2). 
+
+Choose the pivot randomly (using a custom built random function):
+Pros: Much harder for someone to construct an array that will cause it to degrade to O(n^2), if they don't know how you are choosing the random numbers.
+Cons: May be complicated to code. Selecting a random pivot is fairly slow. Still theoretically possible that it can degrade to O(n^2). 
+
+Use the median of medians method to select a pivot
+Pros: The pivot is guaranteed to be good. Quick sort is now O(n log n) worst case !
+Cons: Complicated code. Typically, a lot slower than the above methods.
+
+Which method should I use ?
+
+-If it is unlikely that the data will be sorted, and you are willing to accept O(n^2) in the rare cases when the array is sorted then use the leftmost or rightmost element.
+-If there is a reasonable chance your data is sorted use the middle element or median of threes.
+-If you are somewhat worried about malicious users giving you bad arrays to sort (used as a Denial of Service attack) then use random pivots.
+-If you are really worried about malicious users or you need to guarantee that the quicksort runs is O(n log n) then use the median of medians. At this point you may want to seriously consider using a different sorting method like merge sort.
+

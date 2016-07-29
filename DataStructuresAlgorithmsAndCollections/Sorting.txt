@@ -1,0 +1,19 @@
+Sorting
+=======
+Sorting is nothing but storage of the data in sorted order, it can be in ascending or descending order.
+
+Sorting Efficiency
+==================
+There are many techniques for sorting. Implementation of a particular sorting technique depends upon 
+situation. Sorting techniques mainly depend on two parameters. First is the execution time (time taken) 
+and second is space (memory)
+
+Types of Sorting Techniques
+===========================
+1) Bubble Sort
+2) Insertion Sort
+3) Selection Sort
+4) Quick Sort
+5) Merge Sort
+6) Heap Sort
+7) Time Sort

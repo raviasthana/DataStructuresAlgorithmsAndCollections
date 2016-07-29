@@ -1,0 +1,60 @@
+Insertion Sort
+==============
+It is simple sorting algorithm which sorts by shifting elements one by one.
+Following are some of the important characteristics of insertion sort.
+
+1) It has one of the simplest implementation.
+2) It is efficient for smaller data-sets, but very inefficient for larger lists.
+3) It is adaptive, that means it reduces total number of steps if given a partially sorted list.
+4) It is better than Selection sort and Bubble sort algorithms.
+5) It's space complexity is less, like Bubble sort, insertion also requires a single additional memory space.
+6) It is "Stable", as it does not change the relative order of elements with equal keys.
+
+				2	4	1	7	4	9
+ 					A			B
+ 						  |
+ 		-------------------------------------
+ 		|									|
+ 1	2	4	4	7	9				1	2	4	4	7	9
+ 		A	B								B	A
+ 	{Stable Sort because		{Unstable Sort because 
+ 	order of the equal 			order of equal elements
+ 	elements is maintained 		is NOT maintained in the
+ 	in sorted list} 			sorted list}
+
+How Insertion Sort Works?
+=========================
+
+	5	1	6	2	4	3
+	<---				
+ 	<---<---
+ 	<---<---<---
+ 	<---<---<---<---
+ 	<---<---<---<---<---
+	
+In Insertion sort, we pickup a key (starting at second element in the list i.e. index=1 in array), and compare
+this key with elements ahead of it, and put the key in the right place.
+
+So in 1st pass. [1]@index=1 is picked as key and compared to 5(index=0). As 5 is less than 1(key), so 5 is 
+shifted UP to index 1(so index 0 is empty), and then 1(key) is put at index 0
+1	5	6	2	4	3 //list after 1st pass
+In 2nd pass [6]@index=2 is picked up as key and compared to 5(index=1). As 6(key) is not less than 5, 
+nothing happens. Now 6(key) is compared to 1(index=0) and again as 6 is not less than one, nothing happens.
+1	5	6	2	4	3 //list after 2nd pass
+In 3rd pass [2]@index=3 is picked up as key and compared to 6(index=2), as 2(key) is less than 6, 
+6 is shifted UP to index=3 from index=2 (so now index 2 is empty). 
+Now 2(key) is compared to 5(index=1), as 2(key) is less than 5, 5 is shifted UP to index=2 from index=1 
+(so now index 1 is empty). 
+Now 2(key) is compared to 1(index=0), as 2 is not less than 1, 2(key) is placed at index=1 (which was empty).
+
+this carries on till [number of elements in list - 1] passes are completed.
+ 
+Complexity analysis of Insertion Sort
+=====================================
+Worst case time complexity: O(n^2)
+Best case time complexity:	O(n) //when original list is already sorted
+Average time complexity:	O(n^2)
+Space complexity:			O(1) 
+
+
+			
