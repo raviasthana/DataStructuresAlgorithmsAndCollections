@@ -20,7 +20,7 @@ the pivot value.
 indexes		0	1	2	3	4	5	6	7	8
 		  |54|	26	93	17	77	31	44	55	20	// leftmark and rightmark will converge on split point
 		  pivot	|							|
-			leftmark-->				<--rightmark
+			leftmark-->					<--rightmark
 
 Partitioning begins by locating two position markers -- let's call them leftmark and rightmark -- at the
 beginning and end of the remaining items in the list (index 1 and 8 in the list above). 
@@ -31,8 +31,8 @@ First we start with leftmark
   
 indexes		0	1	2	3	4	5	6	7	8	
 		  |54|	26	93	17	77	31	44	55	20 	// 26<93 move to right, 93>54 STOP
-		  			|						|
-				leftmark				rightmark
+		  		|						|
+			 leftmark			    rightmark
 
 Now we start with rightmark
 
