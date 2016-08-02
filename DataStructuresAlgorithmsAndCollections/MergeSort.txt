@@ -61,5 +61,5 @@ O(n log n) algorithm.
 always divides the array in two halves and take liner time to merge two halves.
 >>> It requires equal amount of additional space as the unsorted list, hence it is not at all recommended
 for working on large data sets.
->>> It is the best Sorting Technique for sorting "Linked Lists".
 >>> Space Complexity: O(n) 
+>>> It is claimed to be the best Sorting Technique for sorting "Linked Lists". Is it???
