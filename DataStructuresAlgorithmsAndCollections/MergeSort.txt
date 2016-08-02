@@ -1,2 +1,65 @@
 Merge Sort
 ==========
+
+Merge Sort follows the rule of "Divide and Conquer". Merge Sort is a recursive algorithm that continually 
+splits a list in half, until only one item is left in each half. If the list is empty or has one item,
+it is considered sorted by definition (the base case). Once the two halves are divided to single items, 
+the fundamental operation, called "merge", is performed. Merging is the process of talking two smaller sorted
+lists and combining them together into a single, sorted, new list.
+
+Lets consider following list as an example.
+
+
+						54	26	93	17	77	31	44	55	20
+						------------------  --------------
+							___|					|___
+					       |							|
+						   |							|
+					54	26	93	17	77			 31	44	55	20
+					----------	------			 -----	------
+				 	 ___|		  |___			   |	   |__		
+				 	|				  |			   |	   	  |
+				 54	26	93			17	77		31	44		55	20
+				 ---------			------		------		------
+				    |				   |		   |		   |									
+				 -------			------		-------		------	
+				|		|		   |	  |		|	  |		|	  |
+			  54 26	  	93		  17	 77		31	  44    55 	 20
+			  -----		|		   |	  |		|	  |		|	  |     	
+			  	|		|		   |	  |		|	  |		|	  |	
+			 -------	|		   |	  |		|	  |		|	  |
+			|		|	|		   |	  |		|	  |		|	  |
+			54 	   26	|		   |	  |		|	  |		|	  |
+			|		|	|		   |	  |		|	  |		|	  |		    
+------------------------|-------Merging Process Starts Now--------------------------------------------------
+		    |		|	|		   |	  |		|	  |		|	  |
+		    ---------	|		   |	  |		|	  |		|	  |
+		    	|		|		   |	  |		|	  |		|	  |
+		      26 54		|		   |	  |		|	  |		|	  |
+		      	|		|		   |	  |		|	  |		|	  |
+		      	--------		   --------		-------		-------
+		      		|			   	  |			   |		   |		
+		      	26	54	93		   17	77		31	44		20	55
+		      		|				  |			   |		   |					
+		      		-------------------			   -------------
+		      				|							 |
+		      		17	26	54	77	93			   20	31	44	55
+		      				|							 |
+	      					------------------------------
+	      								   |
+	   						17	20	26	31	44	54	55	77	93
+	   						
+Complexity Analysis of Merge Sort
+=================================
+Merge Sort has two distinct process that make up its implementation. Fist the list is split into halves, and
+the second process is the merge. A list can be divided in half in "log n" times where n is the length of the
+list. Now each element in the list will be processed and placed in the sorted list, so the merge operation
+which results in the list of size n will require n operations. So the result is that Merge Sort is an 
+O(n log n) algorithm.
+
+>>> Time complexity of Merge Sort is O(n log n) in all 3 cases (worst, average and best) as merge sort
+always divides the array in two halves and take liner time to merge two halves.
+>>> It requires equal amount of additional space as the unsorted list, hence it is not at all recommended
+for working on large data sets.
+>>> It is the best Sorting Technique for sorting "Linked Lists".
+>>> Space Complexity: O(n) 
